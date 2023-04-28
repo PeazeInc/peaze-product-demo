@@ -26,10 +26,10 @@ import { useSubscribeEvent } from "./hooks/useSubscribeEvent";
 const peaze = new PeazeSDK({
   id:
     process.env.REACT_APP_SDK_ID ||
-    "2b122d676fbd9ddc37d4e0c39814134cdf31bc04ccc8c554b191b0efc6d3ac66",
+    "7613cea81adb6faa341386be044cf72e78e241ca81f2a9316813a8568ee5fd18",
   key:
     process.env.REACT_APP_SDK_KEY ||
-    "bddcdeed6109ecf84079eec01a414048985f218e85604862f099bdc24b3f2271",
+    "82190dfb29cb33aa612e7ac493e31357c50cea368199389880551f0451914d50",
   environment: "PRODUCTION",
   network: {
     chainId: SupportedNetwork.PolygonMumbai
@@ -97,10 +97,10 @@ export default function App() {
     }
   };
 
-  // Add this back later
-  const openWallet = async () => {
-    await peaze.getWallet();
-  };
+  // // Add this back later
+  // const openWallet = async () => {
+  //   await peaze.getWallet();
+  // };
 
   useReadEvents({
     onReadEvents,
@@ -176,9 +176,9 @@ export default function App() {
                       Deposit
                     </Button>
                     {/* We will add this back later  */}
-                    <Button colorScheme="purple" onClick={openWallet}>
+                    {/* <Button colorScheme="purple" onClick={openWallet}>
                       Wallet
-                    </Button>
+                    </Button> */}
                   </HStack>
                   <DepositHistory
                     loading={reading || fetching}
