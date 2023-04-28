@@ -11,8 +11,7 @@ type DepositEvent = {
 };
 
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-// export const rpcProvider = new AlchemyProvider(CHAIN_ID, alchemyKey);
-export const rpcProvider = defaultRpcProviders[SupportedNetwork.PolygonMumbai];
+export const rpcProvider = alchemyKey ? new AlchemyProvider(CHAIN_ID, alchemyKey) : defaultRpcProviders[SupportedNetwork.PolygonMumbai];
 
 export const shortenHexString = (address: string, amount = 4) => {
   return address.slice(0, amount + 2) + "..." + address.slice(-amount);
